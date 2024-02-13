@@ -20,12 +20,8 @@ def clean_custom5_field(json_from_db):
         }
 
         if 'Custom5' in customer:
-            # First step: Replace specific unicode sequences and tabs
-            cleaned_address = customer['Custom5'].replace("\\u00f6", "ö") \
-                                                .replace("\\u00e4", "ä") \
-                                                .replace("\\u00e5", "å") \
-                                                .replace("\\t", " ")
-            # Second step: Replace multiple spaces with a single space
+            cleaned_address = customer['Custom5']
+            # Replace multiple spaces with a single space
             cleaned_address = re.sub(r'\s+', ' ', cleaned_address)
             # Assign cleaned address to the 'Address' field
             cleaned_customer['Address'] = cleaned_address
