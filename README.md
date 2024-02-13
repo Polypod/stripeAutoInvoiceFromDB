@@ -8,3 +8,5 @@ To test:
 3) Depending on your DB, manually make a short customer_list (1-2 customers) for testing. Recommend using your own email etc.
 4) Run server.py
 5) Check logs, generated customers and invoices etc @stripe.
+
+The above is under development and for educational purposes. Use on your own risk, developer takes no resposibility for adverse results.
