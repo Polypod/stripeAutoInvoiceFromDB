@@ -1,5 +1,5 @@
 # stripeAutoInvoiceFromDB
-Pulls customer list from a member DB and sends out invoices (email) through Stripe with pricing based on customer user group.
+Pulls customer list from a member DB, adds members as stripe customers if they do not exist and sends out invoices (email) through Stripe with pricing based on customer user group.
 The script uses the Stripe API: https://stripe.com/docs/api
 
 To test:
