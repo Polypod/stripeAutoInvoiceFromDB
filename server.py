@@ -31,7 +31,7 @@ def send_invoice(email, usergroups_str, name, data):
     # Create and send invoice
     invoice = stripe.Invoice.create(customer=customer_id, collection_method='send_invoice', days_until_due=10)
     price_key = "ADULT" if "ADULT" in usergroups_str else "INSTRUCTOR" if "INSTRUCTOR" in usergroups_str else "KIDS" if "KIDS" in usergroups_str else "YOUTH"
-    # TODO:1) If customer is in FAMILY usergroup, apply 18% discount or discount cupon. 2) TBD
+    # TODO:1) If customer has FAMILY field populated in DB, apply 18% discount or discount cupon. 2) TBD
     stripe.InvoiceItem.create(customer=customer_id, price=PRICES[price_key], invoice=invoice.id, discountable=True)
     
     stripe.Invoice.finalize_invoice(invoice.id)
